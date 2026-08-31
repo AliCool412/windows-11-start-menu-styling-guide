@@ -557,8 +557,6 @@ controlStyles:
       - Height=Auto
   - target: StartMenu.PinnedListTile > Grid#Root > Grid#LogoContainer
     styles:
-      - RenderTransformOrigin=0.5,0.5
-      - RenderTransform:=<ScaleTransform ScaleX="1.02" ScaleY="1.02" />
       - ActualHeight=>PinAppHyt
       - ActualWidth=>PinAppWid
       - MinHeight=39
