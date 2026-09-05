@@ -24,8 +24,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
 * Go to the "Settings" tab and select "Textual mode".
 * Copy the content below to the text box and click "Save settings".
 
-### Redesigned Start Menu
-
 <details>
 <summary>Content to import (click to expand)</summary>
 
@@ -53,17 +51,17 @@ controlStyles:
       - BorderThickness=0
   - target: Windows.UI.Xaml.Controls.TextBlock#ShowAllAppsButtonText
     styles:
-      - Text=All Apps
+      - Visibility=Collapsed
   - target: Windows.UI.Xaml.Controls.TextBlock#UserTileNameText
     styles:
       - Visibility=Collapsed
   - target: Windows.UI.Xaml.Controls.Button#ShowAllAppsButton
     styles:
-      - Height=30
+      - Height=32
       - Width=Auto
   - target: Windows.UI.Xaml.Controls.Button#CloseAllAppsButton
     styles:
-      - Height=30
+      - Height=32
       - Width=Auto
   - target: Windows.UI.Xaml.Controls.TextBlock#PinnedListHeaderText
     styles:
@@ -78,12 +76,12 @@ controlStyles:
       - Padding=3,0,3,0
   - target: Windows.UI.Xaml.Controls.Button#ShowAllAppsButton > Windows.UI.Xaml.Controls.ContentPresenter#ContentPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.FontIcon
     styles:
-      - Glyph=
+      - Glyph= 
       - FontSize=16
   - target: Windows.UI.Xaml.Controls.Button#CloseAllAppsButton > Windows.UI.Xaml.Controls.ContentPresenter#ContentPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.FontIcon
     styles:
-      - Glyph=
-      - FontSize=10
+      - Glyph= 
+      - FontSize=16
   - target: Windows.UI.Xaml.Controls.Border#AcrylicOverlay
     styles:
       - Opacity=0
@@ -196,8 +194,36 @@ controlStyles:
   - target: StartMenu.SearchBoxToggleButton#SearchBoxToggleButton
     styles:
       - Margin=0,-48,0,48
-themeResourceVariables:
-  - ''
+  - target: StartDocked.SearchBoxToggleButton#StartMenuSearchBox
+    styles:
+      - Grid.Row=2
+      - VerticalAlignment=Bottom
+      - Margin=32,0,32,0
+  - target: Windows.UI.Xaml.Controls.Grid#InnerContent > Windows.UI.Xaml.Shapes.Rectangle
+    styles:
+      - Grid.Row=2
+      - VerticalAlignment=Bottom
+      - Margin=76,0,0,8
+  - target: Windows.UI.Xaml.Controls.Grid#InnerContent > Grid
+    styles:
+      - Margin=0,0,0,40
+  - target: StartDocked.NavigationPaneView#NavigationPane
+    styles:
+      - Margin=32,0,32,0
+  - target: Windows.UI.Xaml.Controls.Button#ZoomInButton
+    styles:
+      - Visibility=Collapsed
+  - target: Windows.UI.Xaml.Controls.Button#CloseAllAppsButton > Windows.UI.Xaml.Controls.ContentPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.TextBlock
+    styles:
+      - Visibility=Collapsed
+  - target: Windows.UI.Xaml.Controls.Button#ShowAllAppsButton > Windows.UI.Xaml.Controls.ContentPresenter#ContentPresenter
+    styles:
+      - Background:=
+      - BorderThickness=0
+  - target: Windows.UI.Xaml.Controls.Button#CloseAllAppsButton > Windows.UI.Xaml.Controls.ContentPresenter#ContentPresenter
+    styles:
+      - Background:=
+      - BorderThickness=0
 webContentStyles:
   - target: .curatedSettingsGroup
     styles:
@@ -227,160 +253,7 @@ webContentStyles:
   - target: '#qfPreviewPane'
     styles:
       - 'min-width: 300px !important'
-```
-</details>
-
-
-### Classic Start Menu
-
-<details>
-<summary>Content to import (click to expand)</summary>
-
-```yaml
-styleConstants:
-  - ''
-controlStyles:
-  - target: Windows.UI.Xaml.Controls.Grid#TopLevelSuggestionsListHeader
-    styles:
-      - Visibility=Collapsed
-  - target: Windows.UI.Xaml.Controls.Grid#NoTopLevelSuggestionsText
-    styles:
-      - Visibility=Collapsed
-  - target: Windows.UI.Xaml.Controls.Grid#TopLevelSuggestionsContainer
-    styles:
-      - Visibility=Collapsed
-  - target: Windows.UI.Xaml.Controls.Grid#ShowMoreSuggestions
-    styles:
-      - Visibility=Collapsed
-  - target: Border#DropShadow
-    styles:
-      - Opacity=0
-  - target: Border#AcrylicBorder
-    styles:
-      - BorderThickness=0
-  - target: Windows.UI.Xaml.Controls.TextBlock#ShowAllAppsButtonText
-    styles:
-      - Text=All Apps
-  - target: Windows.UI.Xaml.Controls.TextBlock#UserTileNameText
-    styles:
-      - Visibility=Collapsed
-  - target: Windows.UI.Xaml.Controls.Button#ShowAllAppsButton
-    styles:
-      - Height=30
-      - Width=Auto
-  - target: Windows.UI.Xaml.Controls.Button#CloseAllAppsButton
-    styles:
-      - Height=30
-      - Width=Auto
-  - target: Windows.UI.Xaml.Controls.TextBlock#PinnedListHeaderText
-    styles:
-      - Text=Start
-      - FontSize=20
-  - target: Windows.UI.Xaml.Controls.TextBlock#AllAppsHeading
-    styles:
-      - Text=All Apps
-      - FontSize=20
-  - target: StartDocked.NavigationPaneButton#UserTileButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.ContentPresenter
-    styles:
-      - Padding=3,0,3,0
-  - target: Windows.UI.Xaml.Controls.Button#ShowAllAppsButton > Windows.UI.Xaml.Controls.ContentPresenter#ContentPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.FontIcon
-    styles:
-      - Glyph=
-      - FontSize=16
-  - target: Windows.UI.Xaml.Controls.Button#CloseAllAppsButton > Windows.UI.Xaml.Controls.ContentPresenter#ContentPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.FontIcon
-    styles:
-      - Glyph=
-      - FontSize=10
-  - target: Windows.UI.Xaml.Controls.Border#AcrylicOverlay
-    styles:
-      - Opacity=0
-  - target: Windows.UI.Xaml.Controls.Border#StartDropShadow
-    styles:
-      - Visibility=Collapsed
-  - target: Windows.UI.Xaml.Controls.TextBlock#AllListHeadingText
-    styles:
-      - Text=All Apps
-      - FontSize=20
-  - target: Microsoft.UI.Xaml.Controls.DropDownButton#ViewSelectionButton > Windows.UI.Xaml.Controls.Grid#RootGrid > ContentPresenter#ContentPresenter > Windows.UI.Xaml.Controls.TextBlock
-    styles:
-      - Text=
-      - FontFamily=Segoe Fluent Icons
-      - FontSize=16
-  - target: Windows.UI.Xaml.Controls.TextBlock#ShowMorePinnedButtonText
-    styles:
-      - Text=
-      - FontFamily=Segoe Fluent Icons
-      - FontSize=16
-  - target: Windows.UI.Xaml.Controls.Border#RightCompanionDropShadow
-    styles:
-      - Visibility=Collapsed
-  - target: Border#RootGridDropShadow
-    styles:
-      - Visibility=Collapsed
-  - target: Windows.UI.Xaml.Controls.Primitives.ToggleButton#ShowHideCompanion > Windows.UI.Xaml.Controls.Border > Windows.UI.Xaml.Controls.ContentPresenter#ContentPresenter
-    styles:
-      - CornerRadius=2
-  - target: Windows.UI.Xaml.Controls.Primitives.ToggleButton#ShowHideCompanion > Border > ContentPresenter#ContentPresenter > FontIcon > Grid > TextBlock
-    styles:
-      - FontSize=16
-      - FontWeight=Light
-  - target: Frame#StartFrame
-    styles:
-      - Margin=0,-24,0,0
-  - target: Windows.UI.Xaml.Controls.Primitives.ToggleButton#ShowHideCompanion > Border > ContentPresenter
-    styles:
-      - Height=40
-      - Width=40
-      - CornerRadius=4
-  - target: Windows.UI.Xaml.Controls.Primitives.ToggleButton#ShowHideCompanion > Border
-    styles:
-      - Height=40
-      - Width=40
-  - target: Windows.UI.Xaml.Controls.Primitives.ToggleButton#ShowHideCompanion
-    styles:
-      - Height=40
-      - Width=40
-  - target: Windows.UI.Xaml.Controls.Border#dropshadow
-    styles:
-      - Opacity=0
-  - target: Windows.UI.Xaml.Controls.Border#LayerBorder
-    styles:
-      - Opacity=0
-  - target: Windows.UI.Xaml.Controls.Border#AppBorder
-    styles:
-      - BorderThickness=0
-themeResourceVariables:
-  - ''
-webContentStyles:
-  - target: .curatedSettingsGroup
-    styles:
-      - 'display: none !important'
-  - target: .topItemsGroup
-    styles:
-      - 'display: none !important'
-  - target: .scope-tile__button
-    styles:
-      - 'display: none !important'
-  - target: body[dir] .groupTitle
-    styles:
-      - 'font-size: 20px'
-      - 'margin-left: 32px !important'
-      - 'font-family: Segoe UI Variable Display'
-      - line-height=32px
-  - target: .scopesListContainer
-    styles:
-      - 'display: none !important'
-  - target: .groupTitleText
-    styles:
-      - 'font-size: 20px'
-      - 'line-height: 32px'
-  - target: '.zeroInput19H1 #qfContainer #groups>div'
-    styles:
-      - 'display: flex !important'
-  - target: '#qfPreviewPane'
-    styles:
-      - 'min-width: 300px !important'
-      - 'margin-bottom: 12px !important'
+webContentCustomJs: ''
 
 ```
 </details>
