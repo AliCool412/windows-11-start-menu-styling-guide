@@ -6,6 +6,7 @@ Updated with search popout.
 **Author**: [Ali Cool](https://github.com/AliCool412)
 
 ![Screenshot](screenshot.png)
+![Classic Start Menu Screenshot](screenshot-old-start-menu.png)
 
 ## Theme selection
 
