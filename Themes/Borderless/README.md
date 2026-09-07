@@ -28,8 +28,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
-styleConstants:
-  - ''
 controlStyles:
   - target: Windows.UI.Xaml.Controls.Grid#TopLevelSuggestionsListHeader
     styles:
@@ -58,11 +56,11 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Button#ShowAllAppsButton
     styles:
       - Height=32
-      - Width=Auto
+      - Width=64
   - target: Windows.UI.Xaml.Controls.Button#CloseAllAppsButton
     styles:
       - Height=32
-      - Width=Auto
+      - Width=64
   - target: Windows.UI.Xaml.Controls.TextBlock#PinnedListHeaderText
     styles:
       - Text=Start
@@ -73,18 +71,19 @@ controlStyles:
       - FontSize=20
   - target: StartDocked.NavigationPaneButton#UserTileButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.ContentPresenter
     styles:
-      - Padding=3,0,3,0
+      - Margin=-7,0,-7,0
   - target: Windows.UI.Xaml.Controls.Button#ShowAllAppsButton > Windows.UI.Xaml.Controls.ContentPresenter#ContentPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.FontIcon
     styles:
-      - Glyph= 
+      - Glyph= 
       - FontSize=16
   - target: Windows.UI.Xaml.Controls.Button#CloseAllAppsButton > Windows.UI.Xaml.Controls.ContentPresenter#ContentPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.FontIcon
     styles:
-      - Glyph= 
+      - Glyph= 
       - FontSize=16
   - target: Windows.UI.Xaml.Controls.Border#AcrylicOverlay
     styles:
       - Opacity=0
+      - Margin=0,-48,0,48
   - target: Windows.UI.Xaml.Controls.Border#StartDropShadow
     styles:
       - Visibility=Collapsed
@@ -130,7 +129,8 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Primitives.ToggleButton#ShowHideCompanion
     styles:
       - Height=40
-      - Width=40
+      - Width=52
+      - Margin=2,-48,-2,48
   - target: Windows.UI.Xaml.Controls.Border#dropshadow
     styles:
       - Opacity=0
@@ -183,11 +183,11 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.FontIcon#SearchGlyph
     styles:
       - Visibility=Visible
-  - target: Windows.UI.Xaml.Controls.TextBlock#PlaceholderText
+  - target: StartMenu.SearchBoxToggleButton > Grid > ContentPresenter > Windows.UI.Xaml.Controls.TextBlock#PlaceholderText
     styles:
       - Text=Search Everywhere
       - FontFamily=Segoe UI Variable Display
-  - target: Windows.UI.Xaml.Controls.TextBlock#PlaceholderTextContentPresenter
+  - target: StartDocked.SearchBoxToggleButton > Grid > ContentPresenter > Windows.UI.Xaml.Controls.TextBlock#PlaceholderText
     styles:
       - Text=Search Everywhere
       - FontFamily=Segoe UI Variable Display
@@ -216,13 +216,23 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Button#CloseAllAppsButton > Windows.UI.Xaml.Controls.ContentPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.TextBlock
     styles:
       - Visibility=Collapsed
-  - target: Windows.UI.Xaml.Controls.Button#ShowAllAppsButton > Windows.UI.Xaml.Controls.ContentPresenter#ContentPresenter
+  - target: Windows.UI.Xaml.Controls.Button#ShowAllAppsButton > Windows.UI.Xaml.Controls.ContentPresenter
     styles:
-      - Background:=
       - BorderThickness=0
-  - target: Windows.UI.Xaml.Controls.Button#CloseAllAppsButton > Windows.UI.Xaml.Controls.ContentPresenter#ContentPresenter
+  - target: Windows.UI.Xaml.Controls.Button#CloseAllAppsButton > Windows.UI.Xaml.Controls.ContentPresenter
     styles:
-      - Background:=
+      - BorderThickness=0
+  - target: Windows.UI.Xaml.Controls.TextBlock#ZoomedOutHeading
+    styles:
+      - Text=Apps
+      - FontSize=20
+      - IsHitTestVisible=False
+  - target: Cortana.UI.Views.CortanaRichSearchBox#SearchTextBox > Grid > Windows.UI.Xaml.Controls.TextBlock#PlaceholderTextContentPresenter
+    styles:
+      - Text=Search Everywhere
+      - FontFamily=Segoe UI Variable Display
+  - target: Grid#Root > Border
+    styles:
       - BorderThickness=0
 webContentStyles:
   - target: .curatedSettingsGroup
@@ -253,7 +263,5 @@ webContentStyles:
   - target: '#qfPreviewPane'
     styles:
       - 'min-width: 300px !important'
-webContentCustomJs: ''
-
 ```
 </details>
